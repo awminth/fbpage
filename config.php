@@ -1,0 +1,284 @@
+<?php 
+session_start();
+
+date_default_timezone_set("Asia/Rangoon");
+
+define('server_name',$_SERVER['HTTP_HOST']);
+
+if(isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] == "on"){
+    $chk_link = "https";
+}else{
+    $chk_link = "http";
+}
+
+define('root',__DIR__.'/');
+//define('rc',dirname(dirname(__FILE__)).'/');
+
+// define('roothtml',$chk_link."://".server_name."/fbpage/");
+// $con=new mysqli("65.60.39.46","kyuseinl_admin","kyoungunity*007*","kyuseinl_fbpage");
+
+define('curlink',basename($_SERVER['SCRIPT_NAME']));
+
+define('colortype',isset($_SESSION['color'])?$_SESSION['color']:'dark');
+
+define('roothtml',$chk_link."://".server_name."/fbpage/");
+$con=new mysqli("localhost","root","root","fbpage");
+
+mysqli_set_charset($con,"utf8");
+
+$paytype=array('One Pay','KBZ Pay','CB Pay','AYA Pay');
+$arr_gender = array('Male','Female');
+$arr_status = array('Premium','Free');
+$arr_tf = array('True','False');
+$arr_usertype = array('Admin','User');
+$rate = array("MMK");
+$color='primary';
+$arr_chk = array("Cash","Credit","Return");
+
+function GetString($sql){
+    global $con;
+    $str="";   
+    $result=mysqli_query($con,$sql) or die("Query Fail");
+    if(mysqli_num_rows($result)>0){
+        $row = mysqli_fetch_array($result);
+        $str= $row[0];
+    }
+    return $str;
+}
+
+function load_voucher(){
+    
+}
+
+function GetInt($sql){
+    global $con;
+    $str=0;   
+    $result=mysqli_query($con,$sql) or die("Query Fail");
+    if(mysqli_num_rows($result)>0){
+
+        $row = mysqli_fetch_array($result);
+       $str= $row[0];
+    }
+    return $str;
+}
+
+function GetBool($sql){
+    global $con;
+    $str=false;   
+    $result=mysqli_query($con,$sql) or die("Query Fail");
+    if(mysqli_num_rows($result)>0){
+
+       $str=true;
+    }
+    return $str;
+}
+
+function load_user(){
+    global $con;
+    $sql="select * from tbluser";
+    $result=mysqli_query($con,$sql) or die("Query fail.");
+    $out="";
+    while($row = mysqli_fetch_array($result)){
+        $out.="<option value='{$row["AID"]}'>{$row["UserName"]}</option>";
+    }
+    return $out;
+}
+
+function load_category(){
+    global $con;
+    $sql="select * from tblcategory";
+    $result=mysqli_query($con,$sql) or die("Query fail.");
+    $out="";
+    while($row = mysqli_fetch_array($result)){
+        $out.="<option value='{$row["AID"]}'>{$row["Category"]}</option>";
+    }
+    return $out;
+}
+
+function load_itemname(){
+    global $con;
+    $sql="select CodeNo,ItemName from tblremain";
+    $result=mysqli_query($con,$sql) or die("Query fail.");
+    $out="";
+    while($row = mysqli_fetch_array($result)){
+        $out.="<option value='{$row["CodeNo"]}'>{$row["ItemName"]}</option>";
+    }
+    return $out;
+}
+
+function load_supplier(){
+    global $con;
+    $sql="select * from tblsupplier";
+    $result=mysqli_query($con,$sql) or die("Query fail.");
+    $out="";
+    while($row = mysqli_fetch_array($result)){
+        $out.="<option value='{$row["AID"]}'>{$row["Supplier"]}</option>";
+    }
+    return $out;
+}
+
+function load_customer(){
+    global $con;
+    $sql="select * from tblcustomer";
+    $result=mysqli_query($con,$sql) or die("Query fail.");
+    $out="";
+    while($row = mysqli_fetch_array($result)){
+        $out.="<option value='{$row["AID"]}'>{$row["Name"]}</option>";
+    }
+    return $out;
+}
+
+function kill_all_session(){
+    unset($_SESSION["eadmin_userid"]);
+    unset($_SESSION["eadmin_username"]);                  
+    unset($_SESSION["eadmin_usertype"]);
+    unset($_SESSION["eadmin_userpassword"]);
+    unset($_SESSION["shopname"]);
+    unset($_SESSION["shopaddress"]);                  
+    unset($_SESSION["shopphno"]);
+    unset($_SESSION["shopemail"]); 
+    unset($_SESSION['totalamt']);
+    unset($_SESSION['totalqty']);
+    unset($_SESSION['editsalevno']);
+}
+
+function save_log($des){
+    global $con;
+    $dt=date("Y-m-d H:i:s");
+    $userid=$_SESSION['eadmin_userid'];
+    $sql="insert into tbllog (Description,UserID,Date) values ('{$des}'
+    ,$userid,'{$dt}')";
+    mysqli_query($con,$sql);   
+}
+
+function NumtoText($number){
+    $array = [
+        '1' => 'First',
+        '2' => 'Second',
+        '3' => 'Third',
+        '4' => 'Four',
+        '5' => 'Five',
+        '6' => 'Six',
+        '7' => 'Seven',
+        '8' => 'Eight',
+        '9' => 'Nine',
+        '10' => 'Ten',
+    ];
+    return strtr($number, $array);
+}
+
+
+function toMyanmar($number){
+    $array = [
+        '0' => '၀',
+        '1' => '၁',
+        '2' => '၂',
+        '3' => '၃',
+        '4' => '၄',
+        '5' => '၅',
+        '6' => '၆',
+        '7' => '၇',
+        '8' => '၈',
+        '9' => '၉',
+    ];
+    return strtr($number, $array);
+}
+
+
+function toEnglish($number){
+    $array = [
+        '၀' => '0',
+        '၁' => '1',
+        '၂' => '2',
+        '၃' => '3',
+        '၄' => '4',
+        '၅' => '5',
+        '၆' => '6',
+        '၇' => '7',
+        '၈' => '8',
+        '၉' => '9',
+    ];
+    return strtr($number, $array);
+}
+
+function mmDate($date){
+    $date = date_create($date);
+    $date = date_format($date,"d-m-Y");
+    return toMyanmar($date);
+}
+
+function enDate($date){
+    $date = date_create($date);
+    $date = date_format($date,"d-m-Y");
+    return $date;
+}
+
+function enDate1($date){
+    $date = date_create($date);
+    $date = date_format($date,"d M Y");
+    return $date;
+}
+
+function enDateTime($date){
+    $date = date_create($date);
+    $date = date_format($date,"M, d, Y h:i A");
+    return $date;
+}
+
+function enDateTime1($date){
+    $date = date_create($date);
+    $date = date_format($date,"F, d, Y");
+    return $date;
+}
+
+function getTotalYear($date) {
+    return date_diff(date_create($date), date_create('now'))->y;
+}
+
+function pretty_filesize($file) {
+    //$size=filesize($file);
+    $size = $file;
+    if($size<1024){$size=$size." Bytes";}
+    elseif(($size<1048576)&&($size>1023)){$size=round($size/1024, 1)." KB";}
+    elseif(($size<1073741824)&&($size>1048575)){$size=round($size/1048576, 1)." MB";}
+    else{$size=round($size/1073741824, 1)." GB";}
+    return $size;
+}
+
+function control_downloadlink($file_path){
+    $path = $file_path;
+    header('Content-Disposition: attachment; filename="'.basename($path).'"');   
+    readfile($path); 
+    exit();
+}
+
+
+function save_supplier_detail($purchaseid,$supplier,$amt,$dt){
+    global $con;
+    $sql="select * from tblsupplierdetail where PurchaseID={$purchaseid}";
+    $result=mysqli_query($con,$sql) or die("Query fail.");
+    if(mysqli_num_rows($result) > 0){
+        $sqldel="delete from tblsupplierdetail where PurchaseID={$purchaseid}";
+        mysqli_query($con,$sqldel);
+    }
+    $sqlsave="insert into tblsupplierdetail (PurchaseID,SupplierID,Amt,Date) values 
+    ('{$purchaseid}','{$supplier}','{$amt}','{$dt}')";
+    mysqli_query($con,$sqlsave);
+}
+
+function delete_supplier_detail($purchaseid){
+    global $con;
+    $sqldel="delete from tblsupplierdetail where PurchaseID={$purchaseid}";
+    mysqli_query($con,$sqldel);
+   
+    
+}
+
+function purchase_return($aid,$qty){
+    global $con;
+    $sql="update tblremain set Qty='{$qty}' where AID={$aid}";
+    mysqli_query($con,$sql);   
+    
+}
+
+?>

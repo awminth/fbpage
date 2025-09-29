@@ -1,0 +1,323 @@
+[29-Mar-2023 11:46:31 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[29-Mar-2023 11:46:31 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[29-Mar-2023 11:46:31 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[29-Mar-2023 11:46:31 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[29-Mar-2023 11:46:33 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[29-Mar-2023 11:46:33 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[29-Mar-2023 11:46:33 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[29-Mar-2023 11:46:33 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[29-Mar-2023 11:46:35 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[29-Mar-2023 11:46:35 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[29-Mar-2023 11:46:35 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[29-Mar-2023 11:46:35 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[29-Mar-2023 11:46:37 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[29-Mar-2023 11:46:37 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[29-Mar-2023 11:46:37 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[29-Mar-2023 11:46:37 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[29-Mar-2023 11:46:39 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[29-Mar-2023 11:46:39 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[29-Mar-2023 11:46:39 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[29-Mar-2023 11:46:39 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[29-Mar-2023 11:46:41 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[29-Mar-2023 11:46:41 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[29-Mar-2023 11:46:41 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[29-Mar-2023 11:46:41 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[29-Mar-2023 11:46:43 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[29-Mar-2023 11:46:43 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[29-Mar-2023 11:46:43 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[29-Mar-2023 11:46:43 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[29-Mar-2023 11:46:45 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[29-Mar-2023 11:46:45 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[29-Mar-2023 11:46:45 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[29-Mar-2023 11:46:45 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[29-Mar-2023 11:46:47 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[29-Mar-2023 11:46:47 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[29-Mar-2023 11:46:47 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[29-Mar-2023 11:46:47 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[29-Mar-2023 11:46:49 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[29-Mar-2023 11:46:49 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[29-Mar-2023 11:46:49 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[29-Mar-2023 11:46:49 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[29-Mar-2023 11:46:51 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[29-Mar-2023 11:46:51 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[29-Mar-2023 11:46:51 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[29-Mar-2023 11:46:51 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[29-Mar-2023 11:46:52 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[29-Mar-2023 11:46:52 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[29-Mar-2023 11:46:52 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[29-Mar-2023 11:46:52 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 11:37:30 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 11:37:30 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 11:37:30 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 11:37:30 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:42:41 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:42:41 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:42:41 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:42:41 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:42:42 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:42:42 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:42:42 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:42:42 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:42:43 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:42:43 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:42:43 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:42:43 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:42:43 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:42:43 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:42:43 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:42:43 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:42:43 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:42:43 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:42:43 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:42:43 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:42:44 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:42:44 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:42:44 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:42:44 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:42:44 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:42:44 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:42:44 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:42:44 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:42:45 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:42:45 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:42:45 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:42:45 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:42:45 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:42:45 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:42:45 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:42:45 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:42:46 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:42:46 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:42:46 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:42:46 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:42:46 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:42:46 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:42:46 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:42:46 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:42:47 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:42:47 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:42:47 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:42:47 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:42:47 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:42:47 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:42:47 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:42:47 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:42:48 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:42:48 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:42:48 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:42:48 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:42:48 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:42:48 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:42:48 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:42:48 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:42:49 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:42:49 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:42:49 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:42:49 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:42:49 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:42:49 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:42:49 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:42:49 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:42:50 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:42:50 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:42:50 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:42:50 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:42:50 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:42:50 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:42:50 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:42:50 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:42:51 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:42:51 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:42:51 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:42:51 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:42:51 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:42:51 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:42:51 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:42:51 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:42:52 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:42:52 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:42:52 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:42:52 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:42:52 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:42:52 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:42:52 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:42:52 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:42:53 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:42:53 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:42:53 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:42:53 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:42:53 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:42:53 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:42:53 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:42:53 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:42:54 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:42:54 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:42:54 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:42:54 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:42:54 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:42:54 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:42:54 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:42:54 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:42:55 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:42:55 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:42:55 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:42:55 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:42:55 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:42:55 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:42:55 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:42:55 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:42:56 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:42:56 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:42:56 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:42:56 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:42:56 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:42:56 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:42:56 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:42:56 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:42:57 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:42:57 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:42:57 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:42:57 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:42:57 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:42:57 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:42:57 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:42:57 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:42:58 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:42:58 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:42:58 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:42:58 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:42:59 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:42:59 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:42:59 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:42:59 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:42:59 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:42:59 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:42:59 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:42:59 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:42:59 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:42:59 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:42:59 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:42:59 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:43:00 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:43:00 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:43:00 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:43:00 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:43:00 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:43:00 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:43:00 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:43:00 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:43:01 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:43:01 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:43:01 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:43:01 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:43:01 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:43:01 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:43:01 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:43:01 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:43:02 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:43:02 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:43:02 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:43:02 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:43:02 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:43:02 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:43:02 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:43:02 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:43:03 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:43:03 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:43:03 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:43:03 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[31-Mar-2023 23:43:03 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[31-Mar-2023 23:43:03 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[31-Mar-2023 23:43:03 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[31-Mar-2023 23:43:03 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[01-Apr-2023 21:36:22 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[01-Apr-2023 21:36:22 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[01-Apr-2023 21:36:22 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[01-Apr-2023 21:36:22 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[01-Apr-2023 21:36:23 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[01-Apr-2023 21:36:23 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[01-Apr-2023 21:36:23 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[01-Apr-2023 21:36:23 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[01-Apr-2023 21:36:24 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[01-Apr-2023 21:36:24 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[01-Apr-2023 21:36:24 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[01-Apr-2023 21:36:24 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[01-Apr-2023 21:36:25 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[01-Apr-2023 21:36:25 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[01-Apr-2023 21:36:25 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[01-Apr-2023 21:36:25 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[01-Apr-2023 21:36:26 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[01-Apr-2023 21:36:26 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[01-Apr-2023 21:36:26 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[01-Apr-2023 21:36:26 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[01-Apr-2023 21:36:27 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[01-Apr-2023 21:36:27 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[01-Apr-2023 21:36:27 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[01-Apr-2023 21:36:27 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[01-Apr-2023 21:36:28 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[01-Apr-2023 21:36:28 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[01-Apr-2023 21:36:28 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[01-Apr-2023 21:36:28 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[01-Apr-2023 21:36:29 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[01-Apr-2023 21:36:29 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[01-Apr-2023 21:36:29 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[01-Apr-2023 21:36:29 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[01-Apr-2023 21:36:30 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[01-Apr-2023 21:36:30 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[01-Apr-2023 21:36:30 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[01-Apr-2023 21:36:30 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[01-Apr-2023 21:36:31 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[01-Apr-2023 21:36:31 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[01-Apr-2023 21:36:31 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[01-Apr-2023 21:36:31 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[01-Apr-2023 21:36:32 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[01-Apr-2023 21:36:32 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[01-Apr-2023 21:36:32 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[01-Apr-2023 21:36:32 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[01-Apr-2023 21:36:33 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[01-Apr-2023 21:36:33 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[01-Apr-2023 21:36:33 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[01-Apr-2023 21:36:33 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[01-Apr-2023 21:36:33 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[01-Apr-2023 21:36:33 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[01-Apr-2023 21:36:33 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[01-Apr-2023 21:36:33 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[01-Apr-2023 21:36:35 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[01-Apr-2023 21:36:35 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[01-Apr-2023 21:36:35 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[01-Apr-2023 21:36:35 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[01-Apr-2023 21:36:36 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[01-Apr-2023 21:36:36 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[01-Apr-2023 21:36:36 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[01-Apr-2023 21:36:36 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[01-Apr-2023 21:36:37 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[01-Apr-2023 21:36:37 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[01-Apr-2023 21:36:37 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[01-Apr-2023 21:36:37 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[01-Apr-2023 21:36:38 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[01-Apr-2023 21:36:38 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[01-Apr-2023 21:36:38 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 105
+[01-Apr-2023 21:36:38 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/index_action.php on line 107
+[11-Sep-2025 23:04:48 Asia/Rangoon] PHP Warning:  Undefined array key "action" in /home/mmsbkyur/public_html/index_action.php on line 4
+[12-Sep-2025 01:32:06 Asia/Rangoon] PHP Warning:  Undefined array key "action" in /home/mmsbkyur/public_html/index_action.php on line 4
+[12-Sep-2025 02:44:35 Asia/Rangoon] PHP Warning:  Undefined array key "action" in /home/mmsbkyur/public_html/index_action.php on line 4
+[12-Sep-2025 12:39:48 Asia/Rangoon] PHP Warning:  Undefined array key "action" in /home/mmsbkyur/public_html/index_action.php on line 4
+[13-Sep-2025 05:48:38 Asia/Rangoon] PHP Warning:  Undefined array key "action" in /home/mmsbkyur/public_html/index_action.php on line 4
+[13-Sep-2025 06:01:45 Asia/Rangoon] PHP Warning:  Undefined array key "action" in /home/mmsbkyur/public_html/index_action.php on line 4
+[13-Sep-2025 06:39:28 Asia/Rangoon] PHP Warning:  Undefined array key "action" in /home/mmsbkyur/public_html/index_action.php on line 4
+[13-Sep-2025 06:41:07 Asia/Rangoon] PHP Warning:  Undefined array key "action" in /home/mmsbkyur/public_html/index_action.php on line 4
+[13-Sep-2025 07:59:50 Asia/Rangoon] PHP Warning:  Undefined array key "action" in /home/mmsbkyur/public_html/index_action.php on line 4
+[13-Sep-2025 08:24:38 Asia/Rangoon] PHP Warning:  Undefined array key "action" in /home/mmsbkyur/public_html/index_action.php on line 4
+[15-Sep-2025 22:56:21 Asia/Rangoon] PHP Warning:  Undefined array key "action" in /home/mmsbkyur/public_html/index_action.php on line 4
+[16-Sep-2025 06:30:05 Asia/Rangoon] PHP Warning:  Undefined array key "action" in /home/mmsbkyur/public_html/index_action.php on line 4
+[17-Sep-2025 03:20:59 Asia/Rangoon] PHP Warning:  Undefined array key "action" in /home/mmsbkyur/public_html/index_action.php on line 4
+[19-Sep-2025 11:53:55 Asia/Rangoon] PHP Warning:  Undefined array key "eadmin_username" in /home/mmsbkyur/public_html/index_action.php on line 37
+[19-Sep-2025 11:53:55 Asia/Rangoon] PHP Warning:  Undefined array key "eadmin_userid" in /home/mmsbkyur/public_html/config.php on line 147
+[19-Sep-2025 11:53:55 Asia/Rangoon] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''2025-09-19 11:53:55')' at line 2 in /home/mmsbkyur/public_html/config.php:150
+Stack trace:
+#0 /home/mmsbkyur/public_html/config.php(150): mysqli_query()
+#1 /home/mmsbkyur/public_html/index_action.php(37): save_log()
+#2 {main}
+  thrown in /home/mmsbkyur/public_html/config.php on line 150
+[25-Sep-2025 04:21:02 Asia/Rangoon] PHP Warning:  Undefined array key "action" in /home/mmsbkyur/public_html/index_action.php on line 4
+[25-Sep-2025 05:28:44 Asia/Rangoon] PHP Warning:  Undefined array key "action" in /home/mmsbkyur/public_html/index_action.php on line 4

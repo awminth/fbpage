@@ -1,0 +1,33 @@
+[01-Apr-2023 21:36:37 Asia/Rangoon] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to MySQL server on '108.178.44.242' (115) in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 23
+[01-Apr-2023 21:36:37 Asia/Rangoon] PHP Warning:  mysqli_set_charset(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 26
+[01-Apr-2023 21:36:37 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/master/header.php on line 152
+[01-Apr-2023 21:36:37 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/master/header.php on line 153
+[01-Apr-2023 21:36:37 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/master/header.php on line 168
+[01-Apr-2023 21:36:37 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/master/header.php on line 169
+[01-Apr-2023 21:36:37 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/master/header.php on line 190
+[01-Apr-2023 21:36:37 Asia/Rangoon] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/kyawmtun/public_html/ecommerceadmin/master/header.php on line 191
+[01-Apr-2023 21:36:37 Asia/Rangoon] PHP Warning:  mysqli_query(): Couldn't fetch mysqli in /home/kyawmtun/public_html/ecommerceadmin/config.php on line 107
+[16-Sep-2025 12:41:33 UTC] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: int + string in /home/mmsbkyur/public_html/item/vendor/picqer/php-barcode-generator/src/Types/TypeEanUpcBase.php:214
+Stack trace:
+#0 /home/mmsbkyur/public_html/item/vendor/picqer/php-barcode-generator/src/Types/TypeEanUpcBase.php(40): Picqer\Barcode\Types\TypeEanUpcBase->calculateChecksumDigit()
+#1 /home/mmsbkyur/public_html/item/vendor/picqer/php-barcode-generator/src/BarcodeGenerator.php(101): Picqer\Barcode\Types\TypeEanUpcBase->getBarcodeData()
+#2 /home/mmsbkyur/public_html/item/vendor/picqer/php-barcode-generator/src/BarcodeGeneratorPNG.php(54): Picqer\Barcode\BarcodeGenerator->getBarcodeData()
+#3 /home/mmsbkyur/public_html/item/barcode_action.php(20): Picqer\Barcode\BarcodeGeneratorPNG->getBarcode()
+#4 {main}
+  thrown in /home/mmsbkyur/public_html/item/vendor/picqer/php-barcode-generator/src/Types/TypeEanUpcBase.php on line 214
+[16-Sep-2025 12:41:36 UTC] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: int + string in /home/mmsbkyur/public_html/item/vendor/picqer/php-barcode-generator/src/Types/TypeEanUpcBase.php:214
+Stack trace:
+#0 /home/mmsbkyur/public_html/item/vendor/picqer/php-barcode-generator/src/Types/TypeEanUpcBase.php(40): Picqer\Barcode\Types\TypeEanUpcBase->calculateChecksumDigit()
+#1 /home/mmsbkyur/public_html/item/vendor/picqer/php-barcode-generator/src/BarcodeGenerator.php(101): Picqer\Barcode\Types\TypeEanUpcBase->getBarcodeData()
+#2 /home/mmsbkyur/public_html/item/vendor/picqer/php-barcode-generator/src/BarcodeGeneratorPNG.php(54): Picqer\Barcode\BarcodeGenerator->getBarcodeData()
+#3 /home/mmsbkyur/public_html/item/barcode_action.php(20): Picqer\Barcode\BarcodeGeneratorPNG->getBarcode()
+#4 {main}
+  thrown in /home/mmsbkyur/public_html/item/vendor/picqer/php-barcode-generator/src/Types/TypeEanUpcBase.php on line 214
+[16-Sep-2025 12:41:40 UTC] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: int + string in /home/mmsbkyur/public_html/item/vendor/picqer/php-barcode-generator/src/Types/TypeEanUpcBase.php:214
+Stack trace:
+#0 /home/mmsbkyur/public_html/item/vendor/picqer/php-barcode-generator/src/Types/TypeEanUpcBase.php(40): Picqer\Barcode\Types\TypeEanUpcBase->calculateChecksumDigit()
+#1 /home/mmsbkyur/public_html/item/vendor/picqer/php-barcode-generator/src/BarcodeGenerator.php(101): Picqer\Barcode\Types\TypeEanUpcBase->getBarcodeData()
+#2 /home/mmsbkyur/public_html/item/vendor/picqer/php-barcode-generator/src/BarcodeGeneratorPNG.php(54): Picqer\Barcode\BarcodeGenerator->getBarcodeData()
+#3 /home/mmsbkyur/public_html/item/barcode_action.php(20): Picqer\Barcode\BarcodeGeneratorPNG->getBarcode()
+#4 {main}
+  thrown in /home/mmsbkyur/public_html/item/vendor/picqer/php-barcode-generator/src/Types/TypeEanUpcBase.php on line 214

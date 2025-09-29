@@ -1,0 +1,312 @@
+<?php
+include('../config.php');
+
+$action = $_POST["action"];
+
+
+if($action == 'show'){  
+    $limit_per_page=""; 
+    if($_POST['entryvalue']==""){
+        $limit_per_page=10; 
+    } else{
+        $limit_per_page=$_POST['entryvalue']; 
+    }
+    
+    $page="";
+    if(isset($_POST["page_no"])){
+        $page=$_POST["page_no"];
+    }
+    else{
+        $page=1;
+    }
+
+    $offset = ($page-1) * $limit_per_page;                                               
+   
+    $search = $_POST['search'];
+    $a = "";
+    if($search != ''){  
+        $a = " and (v.CodeNo like '%$search%' or v.ItemName like '%$search%') ";
+    } 
+    $from=$_POST['from'];  
+    $to=$_POST['to'];    
+    $b="";
+    if($from!='' || $to!=''){
+        $b=" and Date(v.Date)>='{$from}' and Date(v.Date)<='{$to}' ";
+    }  
+    $customer = $_POST['customer']; 
+    $c = " order by sum(v.Qty) desc ";
+    if($customer == 'l'){
+        $c = " order by sum(v.Qty)";
+    }else{
+        $c = " order by sum(v.Qty) desc ";
+    }
+    $sql="select v.CodeNo,v.ItemName,sum(v.Qty) as qty,sum(v.SellPrice) as price,Date(v.Date) as vdate 
+    from tblsale v 
+    where v.AID is not null ".$b.$a." 
+    group by v.CodeNo ".$c." limit $offset,$limit_per_page";
+    
+    $result=mysqli_query($con,$sql) or die("SQL a Query");
+    $out="";
+    if(mysqli_num_rows($result) > 0){
+        $out.='
+        <table class="table table-bordered tabel-sm table-striped responsive nowrap">
+        <thead>
+        <tr>
+            <th width="7%;">စဉ်</th>
+            <th>CodeNo</th>                                        
+            <th>Item Name</th>
+            <th class="text-right">Qty</th>   
+            <th class="text-right">Total</th>       
+        </tr>
+        </thead>
+        <tbody>
+        ';
+        $no=0;
+        $totalqty=0;
+        $totalamt=0;
+        while($row = mysqli_fetch_array($result)){
+            $no = $no + 1;
+            $totalqty=$totalqty+$row["qty"];
+            $totalamt=$totalamt + ($row["price"]*$row["qty"]);
+            $out.="<tr>
+                <td>{$no}</td>
+                <td>{$row["CodeNo"]}</td>
+                <td>{$row["ItemName"]}</td>
+                <td class='text-right' >".number_format($row["qty"])."</td>                                       
+                <td  class='text-right' >".number_format($row["price"]*$row["qty"])."</td>
+            </tr>";
+        }
+        $out.="</tbody>";
+        $out.="<tfoot>
+                    <tr>                                                                               
+                        <td></td>
+                        <td></td>                                     
+                        <td>စုစုပေါင်း</td>
+                        <td class='text-right' >".number_format($totalqty)."</td>                                       
+                        <td class='text-right'>".number_format($totalamt)."</td>                              
+                    </tr>
+                </tfoot>";
+        $out.="</table>";
+
+        $sql_total="select v.AID 
+        from tblsale v 
+        where v.AID is not null ".$b.$a." 
+        group by v.CodeNo ".$c;
+        $record = mysqli_query($con,$sql_total) or die("fail query");
+        $total_record = mysqli_num_rows($record);
+        $total_links = ceil($total_record/$limit_per_page);
+
+        $out.='<div class="float-left"><p>Total Records -  ';
+        $out.=$total_record;
+        $out.='</p></div>';
+
+        $out.='<div class="float-right">
+                <ul class="pagination">
+            ';      
+        
+        $previous_link = '';
+        $next_link = '';
+        $page_link = '';
+
+        if($total_links > 4){
+            if($page < 5){
+                for($count = 1; $count <= 5; $count++)
+                {
+                    $page_array[] = $count;
+                }
+                $page_array[] = '...';
+                $page_array[] = $total_links;
+            }else{
+                $end_limit = $total_links - 5;
+                if($page > $end_limit){
+                    $page_array[] = 1;
+                    $page_array[] = '...';
+                    for($count = $end_limit; $count <= $total_links; $count++)
+                    {
+                        $page_array[] = $count;
+                    }
+                }else{
+                    $page_array[] = 1;
+                    $page_array[] = '...';
+                    for($count = $page - 1; $count <= $page + 1; $count++)
+                    {
+                        $page_array[] = $count;
+                    }
+                    $page_array[] = '...';
+                    $page_array[] = $total_links;
+                }
+            }            
+
+        }else{
+            for($count = 1; $count <= $total_links; $count++)
+            {
+                $page_array[] = $count;
+            }
+        }
+
+        for($count = 0; $count < count($page_array); $count++){
+            if($page == $page_array[$count]){
+                $page_link .= '<li class="page-item active">
+                                    <a class="page-link" href="#">'.$page_array[$count].' <span class="sr-only">(current)</span></a>
+                                </li>';
+
+                $previous_id = $page_array[$count] - 1;
+                if($previous_id > 0){
+                    $previous_link = '<li class="page-item">
+                                            <a class="page-link" href="javascript:void(0)" data-page_number="'.$previous_id.'">Previous</a>
+                                    </li>';
+                }
+                else{
+                    $previous_link = '<li class="page-item disabled">
+                                            <a class="page-link" href="#">Previous</a>
+                                    </li>';
+                }
+
+                $next_id = $page_array[$count] + 1;
+                if($next_id > $total_links){
+                    $next_link = '<li class="page-item disabled">
+                                        <a class="page-link" href="#">Next</a>
+                                </li>';
+                }else{
+                    $next_link = '<li class="page-item">
+                                    <a class="page-link" href="javascript:void(0)" data-page_number="'.$next_id.'">Next</a>
+                                </li>';
+                }
+            }else{
+                if($page_array[$count] == '...')
+                {
+                    $page_link .= '<li class="page-item disabled">
+                                        <a class="page-link" href="#">...</a>
+                                    </li> ';
+                }else{
+                    $page_link .= '<li class="page-item">
+                                        <a class="page-link" href="javascript:void(0)" data-page_number="'.$page_array[$count].'">'.$page_array[$count].'</a>
+                                    </li> ';
+                }
+            }
+        }
+
+        $out .= $previous_link . $page_link . $next_link;
+        $out .= '</ul></div>';
+        echo $out; 
+    }
+    else{
+        $out.='
+        <table class="table table-bordered table-striped responsive nowrap">
+        <thead>
+        <tr>
+            <th width="7%;">စဉ်</th>
+            <th>CodeNo</th>                                        
+            <th>Item Name</th>
+            <th class="text-right">Qty</th>   
+            <th class="text-right">Total</th>          
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="5" class="text-center">No data</td>
+            </tr>
+            </tbody>
+        </table>
+        ';
+        echo $out;
+    }
+}
+
+if($action == 'excel'){
+    $search = $_POST['ser'];
+    $a = "";
+    if($search != ''){  
+        $a = " and (v.CodeNo like '%$search%' or v.ItemName like '%$search%') ";
+    } 
+    $from=$_POST['hfrom'];  
+    $to=$_POST['hto'];    
+    $b="";
+    if($from!='' || $to!=''){
+        $b=" and Date(v.Date)>='{$from}' and Date(v.Date)<='{$to}' ";
+    }  
+    $customer = $_POST['customer']; 
+    $c = " order by sum(v.Qty) desc ";
+    if($customer == 'l'){
+        $c = " order by sum(v.Qty)";
+    }else{
+        $c = " order by sum(v.Qty) desc ";
+    }
+    $sql="select v.CodeNo,v.ItemName,sum(v.Qty) as qty,sum(v.SellPrice) as price,Date(v.Date) as vdate 
+    from tblsale v 
+    where v.AID is not null ".$b.$a." 
+    group by v.CodeNo ".$c;
+    $result = mysqli_query($con,$sql);
+    $out="";
+    $fileName = "BestSaleReport-".date('d-m-Y').".xls";
+    if(mysqli_num_rows($result) > 0){
+        $out .= '<head><meta charset="utf-8"></head>
+        <table >  
+            <tr>
+                <td colspan="5" align="center"><h3>Best Sale Item Report</h3></td>
+            </tr>
+            <tr><td colspan="5"><td></tr>
+            <tr>  
+                <th style="border: 1px solid ;">No</th>  
+                <th style="border: 1px solid ;">CodeNo</th>  
+                <th style="border: 1px solid ;">Item Name</th>  
+                <th style="border: 1px solid ;">Qty</th>
+                <th style="border: 1px solid ;">Total</th>   
+            </tr>';
+        $no=0;
+        $totalqty = 0;
+        $totalamt = 0;
+        while($row = mysqli_fetch_array($result)){
+            $no = $no + 1;
+            $totalqty=$totalqty+$row["qty"];
+            $totalamt=$totalamt + ($row["price"]*$row["qty"]);
+            $out .= '
+                <tr>  
+                    <td style="border: 1px solid ;">'.$no.'</td>  
+                    <td style="border: 1px solid ;">'.$row["CodeNo"].'</td>  
+                    <td style="border: 1px solid ;">'.$row["ItemName"].'</td>   
+                    <td style="border: 1px solid ;">'.number_format($row["qty"]).'</td>
+                    <td style="border: 1px solid ;">'.number_format($row["qty"]*$row["price"]).'</td>
+                </tr>';
+        }
+        $out.='
+        <tr>
+            <td style="border: 1px solid ;"></td>
+            <td style="border: 1px solid ;"></td>
+            <td style="border: 1px solid ;">Total</td>
+            <td style="border: 1px solid ;">'.number_format($totalqty).'</td>
+            <td style="border: 1px solid ;">'.number_format($totalamt).'</td>
+        </tr>
+        ';
+        $out .= '</table>';
+        header('Content-Type: application/xls');
+        header('Content-Disposition: attachment; filename='.$fileName);
+        echo $out;
+    }else{
+        $out .= '<head><meta charset="utf-8"></head>
+        <table >  
+            <tr>
+                <td colspan="5" align="center"><h3>Best Sale Item Report</h3></td>
+            </tr>
+            <tr><td colspan="5"><td></tr>
+            <tr>  
+                <th style="border: 1px solid ;">No</th>  
+                <th style="border: 1px solid ;">CodeNo</th>  
+                <th style="border: 1px solid ;">Item Name</th>  
+                <th style="border: 1px solid ;">Qty</th>
+                <th style="border: 1px solid ;">Total</th>   
+            </tr>
+            <tr>
+                <td colspan="5" style="border: 1px solid ;" align="center">No data</td>
+            </tr>';
+        $out .= '</table>';
+        header('Content-Type: application/xls');
+        header('Content-Disposition: attachment; filename='.$fileName);
+        echo $out;
+    }   
+    
+}
+
+
+
+?>

@@ -1,0 +1,33 @@
+Database
+
+CREATE TABLE `tblpreordersale` (
+  `AID` int(11) NOT NULL AUTO_INCREMENT,
+  `CodeNo` varchar(45) DEFAULT NULL,
+  `ItemName` varchar(100) DEFAULT NULL,
+  `Qty` int(11) DEFAULT NULL,
+  `SellPrice` float DEFAULT NULL,
+  `TotalPrice` double DEFAULT NULL,
+  `Date` datetime DEFAULT NULL,
+  `VNO` varchar(45) DEFAULT NULL,
+  `CustomerID` int(11) DEFAULT NULL,
+  PRIMARY KEY (`AID`)
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `tblpreordervoucher` (
+  `AID` int(11) NOT NULL AUTO_INCREMENT,
+  `VNO` varchar(45) DEFAULT NULL,
+  `CustomerID` int(11) DEFAULT NULL,
+  `TotalQty` int(11) DEFAULT '0',
+  `TotalAmt` float DEFAULT '0',
+  `Dis` float DEFAULT '0',
+  `Tax` float DEFAULT '0',
+  `Total` float DEFAULT '0',
+  `UserID` int(11) DEFAULT NULL,
+  `Cash` float DEFAULT '0',
+  `Refund` float DEFAULT '0',
+  `Date` datetime DEFAULT NULL,
+  `RegisterKey` varchar(100) DEFAULT NULL,
+  `Credit` float DEFAULT '0',
+  `Chk` varchar(45) DEFAULT 'Confirm',
+  PRIMARY KEY (`AID`)
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8;

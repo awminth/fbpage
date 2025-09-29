@@ -1,0 +1,9 @@
+[28-Mar-2023 22:10:16 Asia/Rangoon] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home/kyawmtun/public_html/ecommerceadmin/setting/backup_action.php on line 11
+[28-Mar-2023 22:10:16 Asia/Rangoon] PHP Fatal error:  Uncaught Error: Call to a member function set_charset() on bool in /home/kyawmtun/public_html/ecommerceadmin/setting/backup_action.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/kyawmtun/public_html/ecommerceadmin/setting/backup_action.php on line 12
+[22-Sep-2025 11:15:18 Asia/Rangoon] PHP Warning:  Undefined array key "shopname" in /home/mmsbkyur/public_html/setting/printsetting.php on line 30
+[22-Sep-2025 11:15:18 Asia/Rangoon] PHP Warning:  Undefined array key "shopemail" in /home/mmsbkyur/public_html/setting/printsetting.php on line 35
+[22-Sep-2025 11:15:18 Asia/Rangoon] PHP Warning:  Undefined array key "shopphno" in /home/mmsbkyur/public_html/setting/printsetting.php on line 42
+[22-Sep-2025 11:15:18 Asia/Rangoon] PHP Warning:  Undefined array key "shopaddress" in /home/mmsbkyur/public_html/setting/printsetting.php on line 49
