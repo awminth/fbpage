@@ -281,4 +281,166 @@ function purchase_return($aid,$qty){
     
 }
 
+function insertData_Fun($table, $data) {
+    global $con;
+    $con->begin_transaction();
+    try{
+        // array ရဲ့ key name ကိုသာ ယူ
+        $columns = implode(", ", array_keys($data));
+        // array length ရှိသလောက် ? ကို သတ်မှတ်ပေး
+        $placeholders = implode(", ", array_fill(0, count($data), "?"));
+        // array ရဲ့ value ကို ယူ
+        $values = array_values($data);
+
+        // types သတ်မှတ် (i = int, d = double, s = string)
+        $types = "";
+        foreach ($values as $v) {
+            if (is_int($v)) {
+                $types .= "i";
+            } elseif (is_float($v)) {
+                $types .= "d";
+            } else {
+                $types .= "s";
+            }
+        }
+
+        $sql = "INSERT INTO $table ($columns) VALUES ($placeholders)";
+        $stmt = $con->prepare($sql);
+
+        if (!$stmt) {
+            die("Prepare failed: " . $con->error);
+        }
+
+        $stmt->bind_param($types, ...$values);
+
+        $success = $stmt->execute();
+
+        if (!$success) throw new Exception($stmt->error);
+        // check row count is success
+        $affected = $stmt->affected_rows;
+
+        $con->commit();
+        // return $con->insert_id; 
+        return $affected > 0 ? true : false;
+    } catch (Exception $e) {
+        $con->rollback();
+        return false;
+    }    
+}
+
+function updateData_Fun($table, $data, $where) {
+    global $con;
+    $con->begin_transaction();
+    try {
+        // Step 1: Check if the AID exists first
+        $whereKeys = array_keys($where);
+        $whereValues = array_values($where);
+        $whereClauseCheck = implode(" AND ", array_map(fn($col) => "$col=?", $whereKeys));
+
+        $sqlCheck = "SELECT COUNT(*) FROM $table WHERE $whereClauseCheck";
+        $stmtCheck = $con->prepare($sqlCheck);
+        if (!$stmtCheck) {
+            throw new Exception("Prepare failed: " . $con->error);
+        }
+
+        $typesCheck = "";
+        foreach ($whereValues as $v) {
+            if (is_int($v)) $typesCheck .= "i";
+            elseif (is_float($v)) $typesCheck .= "d";
+            else $typesCheck .= "s";
+        }
+        $stmtCheck->bind_param($typesCheck, ...$whereValues);
+        $stmtCheck->execute();
+        $stmtCheck->bind_result($count);
+        $stmtCheck->fetch();
+        $stmtCheck->close();
+
+        // If the AID does not exist, rollback and return a specific value
+        if ($count == 0) {
+            $con->rollback();
+            return 0; // Return 0 for "No matching AID found"
+        }
+
+        // Step 2: Proceed with the UPDATE if the AID was found
+        $setClause = implode(", ", array_map(fn($col) => "$col=?", array_keys($data)));
+        $whereClause = implode(" AND ", array_map(fn($col) => "$col=?", array_keys($where)));
+
+        $types = "";
+        $values = array_merge(array_values($data), array_values($where));
+        foreach ($values as $v) {
+            if (is_int($v)) $types .= "i";
+            elseif (is_float($v)) $types .= "d";
+            else $types .= "s";
+        }
+
+        $sql = "UPDATE $table SET $setClause WHERE $whereClause";
+        $stmt = $con->prepare($sql);
+        if (!$stmt) {
+            throw new Exception("Prepare failed: " . $con->error);
+        }
+
+        $stmt->bind_param($types, ...$values);
+        $success = $stmt->execute();
+        if (!$success) {
+            throw new Exception($stmt->error);
+        }
+
+        $con->commit();
+
+        return 1; // 1 for success, 0 for no changes
+        
+    } catch (Exception $e) {
+        $con->rollback();
+        return $e->getMessage();
+    }
+}
+
+function deleteData_Fun($table, $where) {
+    global $con;
+    $con->begin_transaction();
+    try{
+        /*
+        $where = ["AID" => 2, "Status" => "yes", "UserID" => 5]
+        */
+
+        if (empty($where)) {
+            die("WHERE condition is required to prevent full table delete!");
+        }
+
+        // WHERE clause
+        $whereClause = implode(" AND ", array_map(fn($col) => "$col=?", array_keys($where)));
+
+        // Detect types
+        $types = "";
+        $values = array_values($where);
+        foreach ($values as $v) {
+            if (is_int($v)) $types .= "i";
+            elseif (is_float($v)) $types .= "d";
+            else $types .= "s";
+        }
+
+        $sql = "DELETE FROM $table WHERE $whereClause";
+
+        $stmt = $con->prepare($sql);
+        if (!$stmt) {
+            die("Prepare failed: " . $con->error);
+        }
+
+        $stmt->bind_param($types, ...$values);
+        $success = $stmt->execute();
+
+        if (!$success) throw new Exception($stmt->error);
+        // check row count is success
+        $affected = $stmt->affected_rows;
+
+        $con->commit();
+
+        return $affected > 0 ? true : false;
+
+    } catch (Exception $e) {
+        $con->rollback();
+        return false;
+    }    
+}
+
 ?>

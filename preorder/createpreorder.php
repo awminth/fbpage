@@ -44,63 +44,132 @@ include(root.'master/header.php');
                                     <div class="row">
                                         <div class="col-sm-5">
                                             <div class="card card-primary card-outline p-2" id="showmain">
-                                                <div class="form-group row">
-                                                    <label class="col-sm-4" for="usr">Item name :</label>
-                                                    <input type="text"
-                                                        class="col-sm-8 form-control border-primary text-right"
-                                                        name="itemname">
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-sm-4" for="usr">Qty :</label>
-                                                    <input type="number"
-                                                        class="col-sm-8 form-control text-right border-primary"
-                                                        name="qty" id="qty">
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-sm-4" for="usr">SellPrice/Unit :</label>
-                                                    <input type="number"
-                                                        class="col-sm-8 form-control text-right border-primary"
-                                                        name="sellpriceperunit" id="sellpriceperunit">
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-sm-4" for="usr">Total Price :</label>
-                                                    <input type="number"
-                                                        class="col-sm-8 form-control text-right border-primary"
-                                                        name="totalprice" readonly>
-                                                </div>
+                                                <form method="POST" id="frmsavetemp">
+                                                    <input type="hidden" name="action" value="savetemp" />
+                                                    <input type="hidden" name="eaid" value="0" />
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-4" for="usr">Item Code :</label>
+                                                        <input type="text"
+                                                            class="col-sm-8 form-control border-primary text-right"
+                                                            name="itemcode">
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-4" for="usr">Item name :</label>
+                                                        <input type="text"
+                                                            class="col-sm-8 form-control border-primary text-right"
+                                                            name="itemname">
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-4" for="usr">Qty :</label>
+                                                        <input type="number"
+                                                            class="col-sm-8 form-control text-right border-primary"
+                                                            name="qty" id="qty">
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-4" for="usr">SellPrice/Unit :</label>
+                                                        <input type="number"
+                                                            class="col-sm-8 form-control text-right border-primary"
+                                                            name="sellpriceperunit" id="sellpriceperunit">
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-4" for="usr">Total Price :</label>
+                                                        <input type="number"
+                                                            class="col-sm-8 form-control text-right border-primary"
+                                                            name="totalprice" readonly>
+                                                    </div>
+                                                    <div class="form-group text-right">
+                                                        <button type='submit'
+                                                            class='btn btn-success form-control col-sm-6'><i
+                                                                class="fas fa-save"></i>
+                                                            Save</button>
+                                                    </div>
+                                                </form>
                                             </div>
                                         </div>
                                         <div class="col-sm-7">
                                             <div class="card card-primary card-outline p-2" id="showmain">
-                                                <div class="form-group row">
-                                                    <label class="col-sm-4" for="usr">Customer name :</label>
-                                                    <input type="text" class="col-sm-8 form-control border-primary"
-                                                        value="" readonly>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-sm-4" for="usr">Total Amount :</label>
-                                                    <input type="text"
-                                                        class="col-sm-8 form-control text-right border-primary"
-                                                        value="0" readonly>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-sm-4" for="usr">Total Pay :</label>
-                                                    <input type="text"
-                                                        class="col-sm-8 form-control text-right border-primary"
-                                                        value="0" readonly>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-sm-4" for="usr">Total Remain :</label>
-                                                    <input type="text"
-                                                        class="col-sm-8 form-control text-right border-primary"
-                                                        value="0" readonly>
-                                                </div>
+                                                <div id="showtablecreate"></div>
+                                                <form id="frmsave" method="POST">
+                                                    <input type="hidden" name="action" value="save" />
+                                                    <div class="col-md-12">
+                                                        <div class="form-group row">
+                                                            <label class="col-md-3 label-control"
+                                                                for="userinput1">Pay Amount</label>
+                                                            <div class="col-md-9 mx-auto">
+                                                                <input type="number" class="form-control border-primary"
+                                                                    placeholder="Pay Amount" name="payamt" id="payamt">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="form-group row">
+                                                            <label class="col-md-3 label-control"
+                                                                for="userinput1">Change</label>
+                                                            <div class="col-md-9 mx-auto">
+                                                                <input type="number" class="form-control border-primary"
+                                                                    placeholder="Change" name="change" readonly>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="form-group row">
+                                                            <label class="col-md-3 label-control"
+                                                                for="userinput1">CustomerName</label>
+                                                            <div class="col-md-9 mx-auto">
+                                                                <input type="text" class="form-control border-primary"
+                                                                    placeholder="CustomerName" name="customername">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="form-group row">
+                                                            <label class="col-md-3 label-control"
+                                                                for="userinput1">Address</label>
+                                                            <div class="col-md-9 mx-auto">
+                                                                <input type="text" class="form-control border-primary"
+                                                                    placeholder="Address" name="address">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="form-group row">
+                                                            <label class="col-md-3 label-control"
+                                                                for="userinput1">Phone No</label>
+                                                            <div class="col-md-9 mx-auto">
+                                                                <input type="text" class="form-control border-primary"
+                                                                    placeholder="Phone No" name="phoneno">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="form-group row">
+                                                            <label class="col-md-3 label-control"
+                                                                for="timesheetinput3">Date</label>
+                                                            <div class="col-md-9 mx-auto">
+                                                                <div class="position-relative has-icon-left">
+                                                                    <input type="date" id="timesheetinput3"
+                                                                        class="form-control border-primary"
+                                                                        name="dt" value="<?= date("Y-m-d")?>">
+                                                                    <div class="form-control-position">
+                                                                        <i class="ft-message-square"></i>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <div class="modal-footer">
+                                                        <button type="submit" class="btn btn-success form-control col-sm-6"><i
+                                                                class="la la-save"></i>Save</button>
+                                                    </div>
+                                                </form>
                                             </div>
                                         </div>
 
                                     </div>
 
                                 </div>
+                                <!-- For View Pre Order Page -->
                                 <div class="tab-pane fade" id="custom-tabs-one-home" role="tabpanel"
                                     aria-labelledby="custom-tabs-one-home-tab">
 
@@ -278,69 +347,165 @@ include(root.'master/header.php');
             </div>
         </div>
     </div>
-
+</div>
 
 <?php include(root.'master/footer.php'); ?>
 
 <script>
+var ajax_url = "<?php echo roothtml.'preorder/preorder_action.php'; ?>";
+
 $(document).ready(function() {
 
-    function load_pag(page) {
-        var entryvalue = $("[name='hid']").val();
-        var search = $("[name='ser']").val();
-        var from = $("[name='hfrom1']").val();
-        var to = $("[name='hto1']").val();
-        var supplier = $("[name='hsupplier1']").val();
+    function load_pagecreate(page) {
         $.ajax({
             type: "post",
-            url: "<?php echo roothtml.'customer/customerinout_action.php' ?>",
+            url: ajax_url,
             data: {
-                action: 'show',
-                page_no: page,
-                entryvalue: entryvalue,
-                search: search,
-                from: from,
-                to: to,
-                supplier: supplier
+                action: 'showcreate'
             },
             success: function(data) {
-                $("#showpay").html(data);
+                $("#showtablecreate").html(data);
             }
         });
     }
-    load_pag();
+    load_pagecreate();
 
-    function calculate(){
+    function calculate() {
         var qty = $("[name='qty']").val();
         var sellpriceperunit = $("[name='sellpriceperunit']").val();
         var totalprice = qty * sellpriceperunit;
         $("[name='totalprice']").val(totalprice);
     }
 
-    $(document).on('click', '.pagin1', function() {
-        var pageid = $(this).data('page_number');
-        load_pag(pageid);
-    });
+    function calculate_one() {
+        var totalpriceshow = Number($('#showtablecreate #totalpriceshow').text().replace(/,/g,''));
+        var totalpay = $("[name='payamt']").val();
+        var change = totalpay - totalpriceshow;
+        $("[name='change']").val(change);
+        var $changeInput = $("[name='change']");
+        $changeInput.val(change);
+        if (change < 0) {
+            $changeInput.addClass('text-danger');
+        } else {
+            $changeInput.removeClass('text-danger');
+        }
+    }
 
-    $(document).on("change", "#entry", function() {
-        var entryvalue = $(this).val();
-        $("[name='hid']").val(entryvalue);
-        load_pag();
-    });
-
-    $(document).on("keyup", "#searching", function() {
-        var serdata = $(this).val();
-        $("[name='ser']").val(serdata);
-        load_pag();
-    });
-
-    $(document).on("keyup", "#qty", function() {
+    $(document).on("keyup", "#sellpriceperunit, #qty", function() {
         calculate();
     });
 
-    $(document).on("keyup", "#sellpriceperunit", function() {
-        calculate();
+    $(document).on("keyup", "#payamt", function() {
+        calculate_one();
     });
+
+    $("#frmsavetemp").on("submit", function(e) {
+        e.preventDefault();
+        var formData = new FormData(this);
+        $.ajax({
+            type: "post",
+            url: ajax_url,
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function(data) {
+                if (data == 1) {
+                    $("[name='eaid']").val(0);
+                    $("[name='itemcode']").val('');
+                    $("[name='itemname']").val('');
+                    $("[name='qty']").val('');
+                    $("[name='sellpriceperunit']").val('');
+                    $("[name='totalprice']").val('');
+                    load_pagecreate();
+                } else {
+                    swal("Error", "Save Data Error.", "Error");
+                }
+            }
+        });
+    });
+
+    $(document).on('click', '#btnedittemp', function(e) {
+        e.preventDefault();
+        var aid = $(this).data('aid');
+        var itemcode = $(this).data('itemcode');
+        var itemname = $(this).data('itemname');
+        var qty = $(this).data('qty');
+        var sellpriceperunit = $(this).data('sellpriceperunit');
+        var totalprice = $(this).data('totalprice');
+        $("[name='eaid']").val(aid);
+        $("[name='itemcode']").val(itemcode);
+        $("[name='itemname']").val(itemname);
+        $("[name='qty']").val(qty);
+        $("[name='sellpriceperunit']").val(sellpriceperunit);
+        $("[name='totalprice']").val(totalprice);
+    });
+
+    $(document).on("click", "#btndeletetemp", function(e) {
+        e.preventDefault();
+        var aid = $(this).data("aid");
+        swal({
+                title: "Delete?",
+                text: "Are you sure delete!",
+                type: "error",
+                showCancelButton: true,
+                confirmButtonClass: "btn-danger",
+                confirmButtonText: "Yes, delete it!",
+                closeOnConfirm: false
+            },
+            function() {
+                $.ajax({
+                    type: "post",
+                    url: ajax_url,
+                    data: {
+                        action: 'deletetemp',
+                        aid: aid
+                    },
+                    success: function(data) {
+                        if (data == 1) {
+                            swal("Successful",
+                                "Delete data success.",
+                                "success");
+                            load_pagecreate();
+                            swal.close();
+                        } 
+                        else {
+                            swal("Error",
+                                "Delete data failed.",
+                                "error");
+                        }
+                    }
+                });
+            });
+    });
+
+    $("#frmsave").on("submit", function(e) {
+        e.preventDefault();
+        var formData = new FormData(this);
+        $.ajax({
+            type: "post",
+            url: ajax_url,
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function(data) {
+                if (data == 1) {
+                    $("[name='eaid']").val(0);
+                    $("[name='itemcode']").val('');
+                    $("[name='itemname']").val('');
+                    $("[name='qty']").val('');
+                    $("[name='sellpriceperunit']").val('');
+                    $("[name='totalprice']").val('');
+                    load_pagecreate();
+                } else {
+                    swal("Error", "Save Data Error.", "Error");
+                }
+            }
+        });
+    });
+
+
+
+    ////////////////////////////////////////////////////////////////////
 
     $(document).on("change", "#supplierpay", function() {
         var serdata = $(this).val();

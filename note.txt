@@ -31,3 +31,21 @@ CREATE TABLE `tblpreordervoucher` (
   `Chk` varchar(45) DEFAULT 'Confirm',
   PRIMARY KEY (`AID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `tblpreordersale_temp` (
+  `AID` int(11) NOT NULL AUTO_INCREMENT,
+  `CodeNo` varchar(45) DEFAULT NULL,
+  `ItemName` varchar(100) DEFAULT NULL,
+  `Qty` int(11) DEFAULT NULL,
+  `SellPrice` float DEFAULT NULL,
+  `TotalPrice` double DEFAULT NULL,
+  `Date` datetime DEFAULT NULL,
+  `VNO` varchar(45) DEFAULT NULL,
+  `CustomerID` int(11) DEFAULT NULL,
+  PRIMARY KEY (`AID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+ALTER TABLE `fbpage`.`tblpreordersale` 
+CHANGE COLUMN `CustomerID` `CustomerName` VARCHAR(100) NULL DEFAULT NULL ,
+ADD COLUMN `Address` VARCHAR(200) NULL AFTER `CustomerName`,
+ADD COLUMN `PhoneNo` VARCHAR(100) NULL AFTER `Address`;
