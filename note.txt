@@ -49,3 +49,8 @@ ALTER TABLE `fbpage`.`tblpreordersale`
 CHANGE COLUMN `CustomerID` `CustomerName` VARCHAR(100) NULL DEFAULT NULL ,
 ADD COLUMN `Address` VARCHAR(200) NULL AFTER `CustomerName`,
 ADD COLUMN `PhoneNo` VARCHAR(100) NULL AFTER `Address`;
+
+ALTER TABLE `fbpage`.`tblpreordervoucher` 
+CHANGE COLUMN `CustomerID` `CustomerName` VARCHAR(100) NULL DEFAULT NULL ;
+
+ADD COLUMN `UserID` INT(11) NULL AFTER `CustomerID`;

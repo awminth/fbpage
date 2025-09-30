@@ -2,6 +2,7 @@
 include('../config.php');
 
 $action = $_POST['action'];
+$userid = $_SESSION["eadmin_userid"];
 
 if($action == "showcreate"){
     $no = 0;
@@ -104,7 +105,8 @@ if($action == "savetemp"){
             "ItemName" => $itemname,
             "Qty" => $qty,
             "SellPrice" => $sellpriceperunit,
-            "TotalPrice" => $totalprice
+            "TotalPrice" => $totalprice,
+            "UserID" => $userid
         ];
         $result = insertData_Fun("tblpreordersale_temp",$data);
         if($result){
@@ -131,6 +133,9 @@ if($action == "deletetemp"){
 }
 
 if($action == "save"){
+    $totalamt = $_POST["pretotalprice"];
+    $total = $_POST["finaltotalprice"];
+    $disc = $_POST["disc"];
     $payamt = $_POST["payamt"];
     $change = $_POST["change"];
     $customername = $_POST["customername"];
@@ -138,9 +143,31 @@ if($action == "save"){
     $phoneno = $_POST["phoneno"];
     $dt = $_POST["dt"];
     $vno = date("Ymd-His");
+    $totalqty = GetInt("SELECT SUM(Qty) FROM tblpreordersale_temp WHERE AID IS NOT NULL");
     //Insert Sale First
     $sql = "INSERT INTO tblpreordersale (CodeNo,ItemName,Qty,SellPrice,TotalPrice,CustomerName,Address,PhoneNo,
-    Date,VNO) SELECT CodeNo,ItemName,Qty,SellPrice,TotalPrice,";
+    Date,VNO) SELECT CodeNo,ItemName,Qty,SellPrice,TotalPrice,'".$customername."','".$address."','".$phoneno."',
+    '".$dt."','".$vno."'";
+    if(mysqli_query($con,$sql)){
+        $sql_voucher = "INSERT INTO tblpreordervoucher (VNO,CustomerName,TotalQty,TotalAmt,Dis,Total,UserID,Refund,Date) 
+        VALUES ('{$vno}','{$customername}','{$totalqty}','{$totalamt}','{$disc}','{$total}','{$userid}','{$change}','{$dt}')";
+        if(mysqli_query($con,$sql_voucher)){
+            $sqldel_temp = "DELETE FROM tblpreordersale_temp WHERE UserID='{$userid}'";
+            if(mysqli_query($con,$sqldel_temp)){
+                save_log($_SESSION['eadmin_username']."သည် Preorderအသစ်တင်သွားသည်");
+                echo 1;
+            }
+            else{
+                echo 0;
+            }
+        }
+        else{
+            echo 0;
+        }
+    }
+    else{
+        echo 0;
+    }
 }
 
 ?>

@@ -91,6 +91,27 @@ include(root.'master/header.php');
                                                 <div id="showtablecreate"></div>
                                                 <form id="frmsave" method="POST">
                                                     <input type="hidden" name="action" value="save" />
+                                                    <input type="hidden" name="pretotalprice"/>
+                                                    <div class="col-md-12">
+                                                        <div class="form-group row">
+                                                            <label class="col-md-3 label-control"
+                                                                for="userinput1">Discount(%)</label>
+                                                            <div class="col-md-9 mx-auto">
+                                                                <input type="number" class="form-control border-primary"
+                                                                    placeholder="Discount" name="disc" id="disc">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="form-group row">
+                                                            <label class="col-md-3 label-control"
+                                                                for="userinput1">TotalPrice</label>
+                                                            <div class="col-md-9 mx-auto">
+                                                                <input type="number" class="form-control border-primary"
+                                                                    placeholder="TotalPrice" name="finaltotalprice" readonly>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                     <div class="col-md-12">
                                                         <div class="form-group row">
                                                             <label class="col-md-3 label-control"
@@ -379,9 +400,14 @@ $(document).ready(function() {
 
     function calculate_one() {
         var totalpriceshow = Number($('#showtablecreate #totalpriceshow').text().replace(/,/g,''));
+        var predisc = $("[name='disc']").val();
+        var disc = predisc * totalpriceshow / 100;
+        var finaltotalprice = totalpriceshow - disc;
         var totalpay = $("[name='payamt']").val();
-        var change = totalpay - totalpriceshow;
+        var change = totalpay - finaltotalprice;
+        $("[name='finaltotalprice']").val(finaltotalprice);
         $("[name='change']").val(change);
+        $("[name='pretotalprice']").val(totalpriceshow);
         var $changeInput = $("[name='change']");
         $changeInput.val(change);
         if (change < 0) {
@@ -395,7 +421,7 @@ $(document).ready(function() {
         calculate();
     });
 
-    $(document).on("keyup", "#payamt", function() {
+    $(document).on("keyup", "#disc,#payamt", function() {
         calculate_one();
     });
 
@@ -489,15 +515,9 @@ $(document).ready(function() {
             processData: false,
             success: function(data) {
                 if (data == 1) {
-                    $("[name='eaid']").val(0);
-                    $("[name='itemcode']").val('');
-                    $("[name='itemname']").val('');
-                    $("[name='qty']").val('');
-                    $("[name='sellpriceperunit']").val('');
-                    $("[name='totalprice']").val('');
                     load_pagecreate();
                 } else {
-                    swal("Error", "Save Data Error.", "Error");
+                    // swal("Error", "Save Data Error.", "error");
                 }
             }
         });
