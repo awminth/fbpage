@@ -128,6 +128,17 @@ function load_customer(){
     return $out;
 }
 
+function load_customername(){
+    global $con;
+    $sql="select * from tblcustomer";
+    $result=mysqli_query($con,$sql) or die("Query fail.");
+    $out="";
+    while($row = mysqli_fetch_array($result)){
+        $out.="<option value='{$row["Name"]}'>{$row["Name"]}</option>";
+    }
+    return $out;
+}
+
 function kill_all_session(){
     unset($_SESSION["eadmin_userid"]);
     unset($_SESSION["eadmin_username"]);                  
@@ -441,6 +452,76 @@ function deleteData_Fun($table, $where) {
         $con->rollback();
         return false;
     }    
+}
+
+function printVoucher($vno){
+    global $con;
+    $sql = "SELECT s.*,v.* FROM tblpreordervoucher v,tblpreordersale s WHERE v.VNO = s.VNO AND v.VNO='{$vno}'";
+    $result=mysqli_query($con,$sql) or die("SQL a Query");
+    if(mysqli_num_rows($result) > 0){
+        $row = mysqli_fetch_array($result);
+        $out = "";
+        $out .= "
+            <h5 class='text-center'>{$_SESSION['shopname']}</h5>
+            <div align='center'><img src='".roothtml."lib/images/logo2.jpg' style='width: 200px;height:auto;'></img></div>
+            <p class='text-center txt'>{$_SESSION['shopaddress']}<br>
+            {$_SESSION['shopphno']}<br>
+            {$_SESSION['shopemail']}</p>
+            <hr>
+            <p class='txtl fs'>
+                Date : ".$row["Date"]."<br>
+                VoucherNo : ".$row["VNO"]."<br>
+                Customer Name: ".$row["CustomerName"]."<br>
+                Sell Name : {$_SESSION['eadmin_username']}<br>
+            </p>
+            <table class='table table-bordered text-sm' frame=hsides rules=rows width='100%'>
+                <tr>
+                    <th class='txtl'>Item Code</th>
+                    <th class='txtl'>ItemName</th>
+                    <th class='text-center txtc'>Qty</th>
+                    <th class='text-right txtr'>Price</th>
+                    <th class='text-right txtr'>Total</th>
+                </tr>";
+            while($row = mysqli_fetch_array($result)){
+                $out .= "
+                <tr>
+                    <td>{$row['CodeNo']}</td>
+                    <td>{$row['ItemName']}</td>
+                    <td class='text-center txtc'>{$row['Qty']}</td>
+                    <td class='text-right txtr'>".number_format($row['SellPrice'])."</td>
+                    <td class='text-right txtr'>".number_format($row['TotalPrice'])."</td>
+                </tr> ";
+            }                    
+            $out .= "<tr class='text-right txtr'>
+                    <td colspan='4'>
+                        Total<br>
+                        Disc(%)<br>
+                        SubTotal<br>
+                        Cash<br>
+                        Refund
+                    </td>
+                    <td>
+                        ".number_format($row["TotalAmt"])."<br>
+                        ".number_format($row["Dis"])."<br>
+                        ".number_format($row["Total"])."<br>
+                        ".number_format($row["Cash"])."<br>
+                        ".number_format($row["Refund"])."<br>
+                    </td>
+                </tr>
+                <tr class='text-center txt'>
+                    <td colspan='5'>
+                        ********** Thank You **********
+                    </td>   
+                </tr>
+            </table>
+            <br><br><br>
+            <div style='text-align: right; margin-bottom: 20px; margin-right: 20px;'>
+                <button class='btn btn-primary' id='btnprint'>Print</button>
+            </div>
+            ";      
+            /////////////
+            echo $out;
+    }
 }
 
 ?>

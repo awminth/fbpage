@@ -296,6 +296,31 @@ include(root.'master/header.php');
 </div>
 <!-- /.content-wrapper -->
 
+<!-- voucher Modal -->
+<div class="modal fade text-left" id="vouchermodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel25"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-success">
+                <label class="modal-title text-text-bold-600" id="myModalLabel25">အရောင်းဘောက်ချာ</label>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="btnpayclose">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="frmvoucher" method="POST">
+                <input type="hidden" name="action" value="viewvoucher" />
+                <div class="modal-body">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn grey btn-outline-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-outline-primary"><i class="la la-print"></i>Print</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 
 <!-- new Modal -->
 <div class="modal fade" id="btnnewmodal">
@@ -514,10 +539,21 @@ $(document).ready(function() {
             contentType: false,
             processData: false,
             success: function(data) {
-                if (data == 1) {
+                if (data != 0) {
+                    $("#frmvoucher").html(data);
+                    $("#vouchermodal").modal("show");
+                    $("[name='disc']").val(0);
+                    $("[name='pretotalprice']").val('');
+                    $("[name='finaltotalprice']").val('');
+                    $("[name='payamt']").val('');
+                    $("[name='change']").val('');
+                    $("[name='customername']").val('');
+                    $("[name='address']").val('');
+                    $("[name='phoneno']").val('');
                     load_pagecreate();
                 } else {
                     // swal("Error", "Save Data Error.", "error");
+                    swal("",data,"");
                 }
             }
         });

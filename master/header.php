@@ -351,8 +351,8 @@ if(isset($_SESSION['eadmin_userid'])){
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="<?php echo roothtml.'sell/cashsell.php' ?>"
-                                        class="nav-link <?php echo (curlink == 'cashsell.php')?'bgactive' : '' ?>">
+                                    <a href="<?php echo roothtml.'preorder/preorderconfirm.php' ?>"
+                                        class="nav-link <?php echo (curlink == 'preorderconfirm.php')?'bgactive' : '' ?>">
                                         <i class="far fa-circle nav-icon" style="font-size:10px;"></i>
                                         <p>Pre Order Confirm</p>
                                     </a>

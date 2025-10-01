@@ -1,0 +1,14 @@
+Frontend/backend mismatch on voucher response (2025-10-01)
+
+Summary
+- Backend (preorder_action.php, action=save) echoes voucher HTML via printVoucher($vno) on success.
+- Frontend previously expected numeric code 1 and thus treated HTML as error.
+
+Impact
+- Voucher modal did not show; fields not reset.
+
+Fix
+- Frontend now interprets numeric 2/3/4 as errors; otherwise treats response as voucher HTML and renders it into #vouchermodal .modal-body, then shows the modal and resets fields.
+
+Recommendation
+- Prefer JSON contract for clarity, e.g. { status: "ok", html: "..." }.

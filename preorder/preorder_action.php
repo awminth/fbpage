@@ -147,27 +147,274 @@ if($action == "save"){
     //Insert Sale First
     $sql = "INSERT INTO tblpreordersale (CodeNo,ItemName,Qty,SellPrice,TotalPrice,CustomerName,Address,PhoneNo,
     Date,VNO) SELECT CodeNo,ItemName,Qty,SellPrice,TotalPrice,'".$customername."','".$address."','".$phoneno."',
-    '".$dt."','".$vno."'";
+    '".$dt."','".$vno."' FROM tblpreordersale_temp WHERE UserID='{$userid}'";
     if(mysqli_query($con,$sql)){
-        $sql_voucher = "INSERT INTO tblpreordervoucher (VNO,CustomerName,TotalQty,TotalAmt,Dis,Total,UserID,Refund,Date) 
-        VALUES ('{$vno}','{$customername}','{$totalqty}','{$totalamt}','{$disc}','{$total}','{$userid}','{$change}','{$dt}')";
+        $sql_voucher = "INSERT INTO tblpreordervoucher (VNO,CustomerName,TotalQty,TotalAmt,Dis,Total,UserID,Cash,Refund,Date) 
+        VALUES ('{$vno}','{$customername}','{$totalqty}','{$totalamt}','{$disc}','{$total}','{$userid}','{$payamt}','{$change}','{$dt}')";
         if(mysqli_query($con,$sql_voucher)){
             $sqldel_temp = "DELETE FROM tblpreordersale_temp WHERE UserID='{$userid}'";
             if(mysqli_query($con,$sqldel_temp)){
                 save_log($_SESSION['eadmin_username']."သည် Preorderအသစ်တင်သွားသည်");
-                echo 1;
+                printVoucher($vno);
             }
             else{
-                echo 0;
+                echo 2;
             }
         }
         else{
-            echo 0;
+            echo 3;
         }
     }
     else{
-        echo 0;
+        echo 4;
     }
+}
+
+//Reports
+//PreOrder Confirm
+
+if($action == 'show_confirm'){  
+    $limit_per_page=""; 
+    if($_POST['entryvalue']==""){
+        $limit_per_page=10; 
+    } else{
+        $limit_per_page=$_POST['entryvalue']; 
+    }
+    
+    $page="";
+    if(isset($_POST["page_no"])){
+        $page=$_POST["page_no"];
+    }
+    else{
+        $page=1;
+    }
+
+    $offset = ($page-1) * $limit_per_page;                                               
+   
+    $search = $_POST['search'];
+    $a = "";
+    if($search != ''){  
+        $a .= " and (VNO like '%$search%') ";
+    } 
+    $from=$_POST['from'];  
+    $to=$_POST['to'];     
+    $customer=$_POST['customer'];
+    if($from!='' || $to!=''){
+        $a .=" and Date(Date)>='{$from}' and Date(Date)<='{$to}' ";
+    }  
+    if($customer!=''){
+        $a .=" and CustomerName={$customer} ";
+    }   
+    $sql="SELECT * FROM tblpreordervoucher WHERE Chk='Confirm' ".$a." 
+    ORDER BY AID DESC limit $offset,$limit_per_page";
+    $result=mysqli_query($con,$sql) or die("SQL a Query");
+    $out="";
+    if(mysqli_num_rows($result) > 0){
+        $out.='
+        <table class="table table-bordered tabel-sm table-striped responsive nowrap">
+        <thead>
+        <tr>
+            <th width="7%;">စဉ်</th>                                       
+            <th>VNO</th>
+            <th>CustomerName</th>
+            <th class="text-right">SubTotal</th>                                                                             
+            <th>Disc</th>
+            <th class="text-right">Total</th>  
+            <th class="text-right">Cash</th> 
+            <th class="text-right">Refund</th> 
+            <th>Cashier</th>   
+            <th>Date</th>    
+            <th width="10%;" class="text-center">Actions</th>       
+        </tr>
+        </thead>
+        <tbody>
+        ';
+        $no=0;
+        $total_totalamt = 0;
+        $total_disc = 0;
+        $total_total = 0;
+        $total_cash = 0;
+        $total_refund = 0;
+        while($row = mysqli_fetch_array($result)){
+            $no = $no + 1;
+            $total_totalamt += $row["TotalAmt"];
+            $total_disc += $row["Dis"];
+            $total_total += $row["Total"];
+            $total_cash += $row["Cash"];
+            $total_refund += $row["Refund"];
+            $cashier = GetString("SELECT UserName FROM tbluser WHERE AID='{$row["UserID"]}'");
+            $out.="<tr>
+                <td>{$no}</td>
+                <td>{$row["VNO"]}</td>
+                <td>{$row["CustomerName"]}</td>
+                <td class='text-right' >".number_format($row["TotalAmt"])."</td>                                       
+                <td  class='text-right' >".number_format($row["Dis"])."</td>
+                <td class='text-right' >".number_format($row["Total"])."</td>
+                <td class='text-right' >".number_format($row["Cash"])."</td>
+                <td class='text-right' >".number_format($row["Refund"])."</td>
+                <td >{$cashier}</td> 
+                <td >".enDate($row["Date"])."</td> 
+                <td class='text-center'>
+                    <div class='btn-group btn-group-sm'>
+                        <a href='#' id='viewsell' data-toggle='tooltip' data-placement='bottom'
+                            title='အသေးစိတ်ကြည့်မည်' 
+                            data-vno='{$row['VNO']}' 
+                            class='btn btn-success btn-sm'><i class='fas fa-eye'></i></a>
+                        <a href='#' data-vno='{$row['VNO']}' id='deletesell' data-toggle='tooltip' data-placement='bottom'
+                            title='ဖျက်သိမ်းမည်' class='btn btn-danger btn-sm'><i
+                            class='fas fa-trash'></i></a>
+                    </div>
+                </td>
+            </tr>";
+        }
+        $out.="</tbody>";
+        $out.="<tfoot>
+                    <tr>                                      
+                        <td colspan='3' class='text-center'>စုစုပေါင်း</td>
+                        <td class='text-right' >".number_format($total_totalamt)."</td>                                       
+                        <td class='text-right'>".number_format($total_disc)."</td>
+                        <td class='text-right' >".number_format($total_total)."</td>
+                        <td class='text-right' >".number_format($total_cash)."</td>
+                        <td class='text-right' >".number_format($total_refund)."</td>
+                        <td></td>   
+                        <td></td> 
+                        <td></td>                                 
+                    </tr>
+                </tfoot>";
+        $out.="</table>";
+
+        $sql_total="SELECT * FROM tblpreordervoucher WHERE Chk='Confirm' ".$a." 
+        ORDER BY AID DESC";
+        $record = mysqli_query($con,$sql_total) or die("fail query");
+        $total_record = mysqli_num_rows($record);
+        $total_links = ceil($total_record/$limit_per_page);
+
+        $out.='<div class="float-left"><p>Total Records -  ';
+        $out.=$total_record;
+        $out.='</p></div>';
+
+        $out.='<div class="float-right">
+                <ul class="pagination">
+            ';      
+        
+        $previous_link = '';
+        $next_link = '';
+        $page_link = '';
+
+        if($total_links > 4){
+            if($page < 5){
+                for($count = 1; $count <= 5; $count++)
+                {
+                    $page_array[] = $count;
+                }
+                $page_array[] = '...';
+                $page_array[] = $total_links;
+            }else{
+                $end_limit = $total_links - 5;
+                if($page > $end_limit){
+                    $page_array[] = 1;
+                    $page_array[] = '...';
+                    for($count = $end_limit; $count <= $total_links; $count++)
+                    {
+                        $page_array[] = $count;
+                    }
+                }else{
+                    $page_array[] = 1;
+                    $page_array[] = '...';
+                    for($count = $page - 1; $count <= $page + 1; $count++)
+                    {
+                        $page_array[] = $count;
+                    }
+                    $page_array[] = '...';
+                    $page_array[] = $total_links;
+                }
+            }            
+
+        }else{
+            for($count = 1; $count <= $total_links; $count++)
+            {
+                $page_array[] = $count;
+            }
+        }
+
+        for($count = 0; $count < count($page_array); $count++){
+            if($page == $page_array[$count]){
+                $page_link .= '<li class="page-item active">
+                                    <a class="page-link" href="#">'.$page_array[$count].' <span class="sr-only">(current)</span></a>
+                                </li>';
+
+                $previous_id = $page_array[$count] - 1;
+                if($previous_id > 0){
+                    $previous_link = '<li class="page-item">
+                                            <a class="page-link" href="javascript:void(0)" data-page_number="'.$previous_id.'">Previous</a>
+                                    </li>';
+                }
+                else{
+                    $previous_link = '<li class="page-item disabled">
+                                            <a class="page-link" href="#">Previous</a>
+                                    </li>';
+                }
+
+                $next_id = $page_array[$count] + 1;
+                if($next_id > $total_links){
+                    $next_link = '<li class="page-item disabled">
+                                        <a class="page-link" href="#">Next</a>
+                                </li>';
+                }else{
+                    $next_link = '<li class="page-item">
+                                    <a class="page-link" href="javascript:void(0)" data-page_number="'.$next_id.'">Next</a>
+                                </li>';
+                }
+            }else{
+                if($page_array[$count] == '...')
+                {
+                    $page_link .= '<li class="page-item disabled">
+                                        <a class="page-link" href="#">...</a>
+                                    </li> ';
+                }else{
+                    $page_link .= '<li class="page-item">
+                                        <a class="page-link" href="javascript:void(0)" data-page_number="'.$page_array[$count].'">'.$page_array[$count].'</a>
+                                    </li> ';
+                }
+            }
+        }
+
+        $out .= $previous_link . $page_link . $next_link;
+        $out .= '</ul></div>';
+        echo $out; 
+    }
+    else{
+        $out.='
+        <table class="table table-bordered table-striped responsive nowrap">
+        <thead>
+        <tr>
+            <th width="7%;">စဉ်</th>                                       
+            <th>VNO</th>
+            <th>CustomerName</th>
+            <th class="text-right">SubTotal</th>                                                                             
+            <th>Disc</th>
+            <th class="text-right">Total</th>  
+            <th class="text-right">Cash</th> 
+            <th class="text-right">Refund</th> 
+            <th>Cashier</th>   
+            <th>Date</th>    
+            <th width="10%;" class="text-center">Actions</th>          
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="11" class="text-center">No data</td>
+            </tr>
+            </tbody>
+        </table>
+        ';
+        echo $out;
+    }
+}
+
+if($action = "viewvoucher_confirm"){
+    $vno = $_POST["vno"];
+    printVoucher($vno);
 }
 
 ?>
