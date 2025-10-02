@@ -331,8 +331,8 @@ if(isset($_SESSION['eadmin_userid'])){
                             <hr style="background-color:white; margin:0px; padding:0px;">
                         </li>
                         <li
-                            class="nav-item <?php echo (curlink == 'pause.php' || curlink=='selllist.php' || 
-                            curlink=='cashsell.php' || curlink=='creditsell.php' || curlink=='sellreturn.php')?'menu-open' : '' ?>">
+                            class="nav-item <?php echo (curlink == 'createpreorder.php' || curlink=='preorderconfirm.php' || 
+                            curlink=='preorderreturn.php' || curlink=='preordercancel.php')?'menu-open' : '' ?>">
 
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-shopping-cart"></i>
@@ -358,17 +358,17 @@ if(isset($_SESSION['eadmin_userid'])){
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="<?php echo roothtml.'sell/creditsell.php' ?>"
-                                        class="nav-link <?php echo (curlink == 'creditsell.php')?'bgactive' : '' ?>">
+                                    <a href="<?php echo roothtml.'preorder/preorderreturn.php' ?>"
+                                        class="nav-link <?php echo (curlink == 'preorderreturn.php')?'bgactive' : '' ?>">
                                         <i class="far fa-circle nav-icon" style="font-size:10px;"></i>
-                                        <p>Pre Order Cancel</p>
+                                        <p>Pre Order Return</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="<?php echo roothtml.'sell/sellreturn.php' ?>"
-                                        class="nav-link <?php echo (curlink == 'sellreturn.php')?'bgactive' : '' ?>">
+                                    <a href="<?php echo roothtml.'preorder/preordercancel.php' ?>"
+                                        class="nav-link <?php echo (curlink == 'preordercancel.php')?'bgactive' : '' ?>">
                                         <i class="far fa-circle nav-icon" style="font-size:10px;"></i>
-                                        <p>Pre Order Return</p>
+                                        <p>Pre Order Cancel</p>
                                     </a>
                                 </li>
 

@@ -178,7 +178,6 @@ function NumtoText($number){
     return strtr($number, $array);
 }
 
-
 function toMyanmar($number){
     $array = [
         '0' => '၀',
@@ -194,7 +193,6 @@ function toMyanmar($number){
     ];
     return strtr($number, $array);
 }
-
 
 function toEnglish($number){
     $array = [
@@ -262,7 +260,6 @@ function control_downloadlink($file_path){
     readfile($path); 
     exit();
 }
-
 
 function save_supplier_detail($purchaseid,$supplier,$amt,$dt){
     global $con;
@@ -459,7 +456,7 @@ function printVoucher($vno){
     $sql = "SELECT s.*,v.* FROM tblpreordervoucher v,tblpreordersale s WHERE v.VNO = s.VNO AND v.VNO='{$vno}'";
     $result=mysqli_query($con,$sql) or die("SQL a Query");
     if(mysqli_num_rows($result) > 0){
-        $row = mysqli_fetch_array($result);
+        $voucher_row = mysqli_fetch_array($result);
         $out = "";
         $out .= "
             <h5 class='text-center'>{$_SESSION['shopname']}</h5>
@@ -469,9 +466,9 @@ function printVoucher($vno){
             {$_SESSION['shopemail']}</p>
             <hr>
             <p class='txtl fs'>
-                Date : ".$row["Date"]."<br>
-                VoucherNo : ".$row["VNO"]."<br>
-                Customer Name: ".$row["CustomerName"]."<br>
+                Date : ".$voucher_row["Date"]."<br>
+                VoucherNo : ".$voucher_row["VNO"]."<br>
+                Customer Name: ".$voucher_row["CustomerName"]."<br>
                 Sell Name : {$_SESSION['eadmin_username']}<br>
             </p>
             <table class='table table-bordered text-sm' frame=hsides rules=rows width='100%'>
@@ -482,6 +479,8 @@ function printVoucher($vno){
                     <th class='text-right txtr'>Price</th>
                     <th class='text-right txtr'>Total</th>
                 </tr>";
+            // Reset the result pointer to the beginning
+            mysqli_data_seek($result, 0);
             while($row = mysqli_fetch_array($result)){
                 $out .= "
                 <tr>
@@ -501,11 +500,11 @@ function printVoucher($vno){
                         Refund
                     </td>
                     <td>
-                        ".number_format($row["TotalAmt"])."<br>
-                        ".number_format($row["Dis"])."<br>
-                        ".number_format($row["Total"])."<br>
-                        ".number_format($row["Cash"])."<br>
-                        ".number_format($row["Refund"])."<br>
+                        ".number_format($voucher_row["TotalAmt"])."<br>
+                        ".number_format($voucher_row["Dis"])."<br>
+                        ".number_format($voucher_row["Total"])."<br>
+                        ".number_format($voucher_row["Cash"])."<br>
+                        ".number_format($voucher_row["Refund"])."<br>
                     </td>
                 </tr>
                 <tr class='text-center txt'>
@@ -521,6 +520,29 @@ function printVoucher($vno){
             ";      
             /////////////
             echo $out;
+    }
+}
+
+function deletepreorder($vno){
+    global $con;
+    $whereone = [
+        "VNO" => $vno
+    ];
+    $resone = deleteData_Fun("tblpreordervoucher",$whereone);
+    if($resone){
+        $wheretwo = [
+            "VNO" => $vno
+        ];
+        $restwo = deleteData_Fun("tblpreordersale",$wheretwo);
+        if($restwo){
+            echo 1;
+        }
+        else{
+            echo 0;
+        }
+    }
+    else{
+        echo 0;
     }
 }
 

@@ -10,7 +10,7 @@ include(root.'master/header.php');
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>PreOrder Confirm စာရင်းများ</h1>
+                    <h1>PreOrder Cancel စာရင်းများ</h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -49,7 +49,7 @@ include(root.'master/header.php');
                                 <input type="hidden" name="hfrom">
                                 <input type="hidden" name="hto">
                                 <input type="hidden" name="hcustomer">
-                                <button type="submit" name="action" value="excel_confirm"
+                                <button type="submit" name="action" value="excel_cancel"
                                     class="form-control btn btn-sm btn-<?=$color?>"><i
                                         class="fas fa-file-excel"></i>&nbsp;Excel</button>
                             </form>
@@ -163,7 +163,7 @@ $(document).ready(function() {
             type: "post",
             url: ajax_url,
             data: {
-                action: 'show_confirm',
+                action: 'show_cancel',
                 page_no: page,
                 entryvalue: entryvalue,
                 search: search,
@@ -211,13 +211,13 @@ $(document).ready(function() {
         print_fun("printdata");
     });
 
-    $(document).on("click", "#btnviewconfirm", function() {
+    $(document).on("click", "#btnviewcancel", function() {
         var vno = $(this).data("vno");
         $.ajax({
             type: "post",
             url: ajax_url,
             data: {
-                action: 'viewvoucher_confirm',
+                action: 'viewvoucher_cancel',
                 vno: vno
             },
             success: function(data) {
@@ -227,7 +227,7 @@ $(document).ready(function() {
         });
     });
 
-    $(document).on("click", "#btndeleteconfirm", function(e) {
+    $(document).on("click", "#btndeletecancel", function(e) {
         e.preventDefault();
         var vno = $(this).data("vno");
         swal({
@@ -244,7 +244,7 @@ $(document).ready(function() {
                     type: "post",
                     url: ajax_url,
                     data: {
-                        action: 'delete_confirm',
+                        action: 'delete_cancel',
                         vno: vno
                     },
                     success: function(data) {

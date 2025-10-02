@@ -202,12 +202,12 @@ include(root.'master/header.php');
                                                             class="fas fa-plus"></i>&nbsp; Add </button>
                                                 </td>
                                                 <td>
-                                                    <form method="POST" action="customerinout_action.php">
+                                                    <form method="POST" action="preorder_action.php">
                                                         <input type="hidden" name="hid">
                                                         <input type="hidden" name="ser">
-                                                        <input type="hidden" name="hfrom1">
-                                                        <input type="hidden" name="hto1">
-                                                        <input type="hidden" name="hsupplier1">
+                                                        <input type="hidden" name="hfrom">
+                                                        <input type="hidden" name="hto">
+                                                        <input type="hidden" name="hcustomer">
                                                         <button type="submit" name="action" value="excel"
                                                             class="btn btn-sm btn-primary"><i
                                                                 class="fas fa-file-excel"></i>&nbsp;Excel</button>
@@ -223,23 +223,23 @@ include(root.'master/header.php');
                                                 <div class="form-group">
                                                     <label for="usr"> From :</label>
                                                     <input type="date" class="form-control border-success"
-                                                        value="<?=date('Y-m-d')?>" name="dt1from">
+                                                        value="<?=date('Y-m-d')?>" name="dtfrom">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="usr"> To :</label>
                                                     <input type="date" class="form-control border-success"
-                                                        value="<?=date('Y-m-d')?>" name="dt1to">
+                                                        value="<?=date('Y-m-d')?>" name="dtto">
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="usr"> Supplier :</label>
-                                                    <select class="form-control border-success select2" id="supplierpay"
-                                                        name="supplierpay">
+                                                    <label for="usr"> Customer :</label>
+                                                    <select class="form-control border-success select2" id="customername"
+                                                        name="customername">
                                                         <option value="">Select Customer</option>
-                                                        <?=load_customer()?>
+                                                        <?=load_customername()?>
                                                     </select>
                                                 </div>
                                                 <button class="form-control btn btn-primary"
-                                                    id="btnsearch2">Search</button>
+                                                    id="btnsearch">Search</button>
                                             </div>
                                         </div>
                                         <div class="col-sm-9">
@@ -267,7 +267,7 @@ include(root.'master/header.php');
                                                                         class="col-sm-3 col-form-label">Search</label>
                                                                     <div class="col-sm-9">
                                                                         <input type="search" class="form-control"
-                                                                            id="searching" placeholder="Search....">
+                                                                            id="searching" placeholder="Search by VNO...">
                                                                     </div>
                                                                 </div>
                                                             </td>
@@ -275,7 +275,7 @@ include(root.'master/header.php');
                                                     </tbody>
                                                 </table>
 
-                                                <div id="showpay" class="table-responsive-sm">
+                                                <div id="showvieworder" class="table-responsive-sm">
 
                                                 </div>
                                             </div>
@@ -317,80 +317,6 @@ include(root.'master/header.php');
                     <button type="submit" class="btn btn-outline-primary"><i class="la la-print"></i>Print</button>
                 </div>
             </form>
-        </div>
-    </div>
-</div>
-
-
-<!-- new Modal -->
-<div class="modal fade" id="btnnewmodal">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header bg-<?=$color?>">
-                <h4 class="modal-title">Customer Pay</h4>
-                <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
-            </div>
-            <form id="frm" method="POST" enctype="multipart/form-data">
-                <!-- Modal body -->
-                <input type="hidden" name="action" id="action" value="save">
-                <div class='modal-body' data-spy='scroll' data-offset='50'>
-                    <div class="form-group">
-                        <label for="usr">Customer Name:</label>
-                        <select class="form-control border-success select2" name="supplierpay1">
-                            <option value="">Select Customer</option>
-                            <?=load_customer();?>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="usr">Amount:</label>
-                        <input type="number" value="0" class="form-control border-success" name="amt"
-                            placeholder="Amount">
-                    </div>
-                    <div class="form-group">
-                        <label for="usr">Date:</label>
-                        <input type="date" class="form-control border-success" name="date" value="<?=date('Y-m-d')?>">
-                    </div>
-                </div>
-                <div class='modal-footer'>
-                    <button type='submit' id='btnsave' class='btn btn-<?=$color?>'><i class="fas fa-save"></i>
-                        အသစ်သွင်းမည်</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-
-<!-- The Modal -->
-<div class="modal fade" id="editmodal">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header bg-<?=$color?>">
-                <h4 class="modal-title">Edit Customer Pay</h4>
-                <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
-            </div>
-            <form id="showedit" method="POST">
-                <!-- Modal body -->
-
-            </form>
-        </div>
-    </div>
-</div>
-
-<!-- The Modal -->
-<div class="modal fade" id="editpayprepare">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header bg-<?=$color?>">
-                <h4 class="modal-title">View Customer Pay</h4>
-                <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="modal-body" id="showpaydetail">
-
-            </div>
         </div>
     </div>
 </div>
@@ -552,8 +478,7 @@ $(document).ready(function() {
                     $("[name='phoneno']").val('');
                     load_pagecreate();
                 } else {
-                    // swal("Error", "Save Data Error.", "error");
-                    swal("",data,"");
+                    swal("Error", "Save Data Error.", "error");
                 }
             }
         });
@@ -562,170 +487,187 @@ $(document).ready(function() {
 
 
     ////////////////////////////////////////////////////////////////////
+    // View Pre Order Page
+    ////////////////////////////////////////////////////////////////////
+    function load_pageview(page) {
+        var entryvalue = $("[name='hid']").val();
+        var search = $("[name='ser']").val();
+        var from = $("[name='hfrom']").val();
+        var to = $("[name='hto']").val();
+        var customer = $("[name='hcustomer']").val();
+        $.ajax({
+            type: "post",
+            url: ajax_url,
+            data: {
+                action: 'showvieworder',
+                page_no: page,
+                entryvalue: entryvalue,
+                search: search,
+                from: from,
+                to: to,
+                customer: customer
+            },
+            success: function(data) {
+                $("#showvieworder").html(data);
+            }
+        });
+    }
+    load_pageview();
 
-    $(document).on("change", "#supplierpay", function() {
+    $(document).on('click', '.page-link', function() {
+        var pageid = $(this).data('page_number');
+        load_pageview(pageid);
+    });
+
+    $(document).on("change", "#entry", function() {
+        var entryvalue = $(this).val();
+        $("[name='hid']").val(entryvalue);
+        load_pageview();
+    });
+
+    $(document).on("keyup", "#searching", function() {
         var serdata = $(this).val();
-        $("[name='hsupplier1']").val(serdata);
-
+        $("[name='ser']").val(serdata);
+        load_pageview();
     });
 
-    $(document).on("click", "#btnsearch2", function() {
-        var from = $("[name='dt1from']").val();
-        var to = $("[name='dt1to']").val();
-        $("[name='hfrom1']").val(from);
-        $("[name='hto1']").val(to);
-        load_pag();
+    $(document).on("click", "#btnsearch", function() {
+        var from = $("[name='dtfrom']").val();
+        var to = $("[name='dtto']").val();
+        $("[name='hfrom']").val(from);
+        $("[name='hto']").val(to);
+        load_pageview();
     });
 
-    $(document).on("click", "#btnnew", function() {
-        $("#btnnewmodal").modal("show").fadeToggle();
+    $(document).on("change", "#customername", function() {
+        var serdata = $(this).val();
+        $("[name='hcustomer']").val(serdata);
+        load_pageview();
     });
 
-    $(document).on('click', '#btnsearch1', function() {
-        var supplier = $("[name='suppliermain']").val();
-        var name = $("[name='suppliermain'] option:selected").text();
-        if (supplier == '') {
-            swal("Information", "Please choose customer", "info");
-            return false;
-        }
+    $(document).on("click", "#btnvieworder", function() {
+        var vno = $(this).data("vno");
         $.ajax({
             type: "post",
-            url: "<?php echo roothtml.'customer/customerinout_action.php' ?>",
+            url: ajax_url,
             data: {
-                action: 'showmain',
-                supplier: supplier,
-                name: name
+                action: 'viewvoucher',
+                vno: vno
             },
             success: function(data) {
-                $("#showmain").html(data);
+                $("#frmvoucher").html(data);
+                $("#vouchermodal").modal("show");
             }
         });
     });
 
-    $(document).on('click', '#btnsave', function(e) {
-        e.preventDefault();
-        var supplier = $("[name='supplierpay1']").val();
-        var amt = $("[name='amt']").val();
-        var date = $("[name='date']").val();
-        if (supplier == '') {
-            swal('info', 'Please Fill Customer', 'info');
-            return false;
-        }
-        if (amt == '' || amt <= 0) {
-            swal('info', 'Please Fill Amount', 'info');
-            return false;
-        }
-        $("#btnnewmodal").modal("hide");
-        $.ajax({
-            type: "post",
-            url: "<?php echo roothtml.'customer/customerinout_action.php' ?>",
-            data: {
-                action: 'save',
-                supplier: supplier,
-                amt: amt,
-                date: date
-            },
-            success: function(data) {
-                if (data == 1) {
-                    swal('success', 'Save Success', 'success');
-
-                    load_pag();
-                    swal.close();
-                } else {
-                    swal('error', 'error save', 'error');
-                }
-            }
-        });
-
-    });
-
-    $(document).on('click', '#btneditprepare', function(e) {
-        e.preventDefault();
-        var aid = $(this).data('aid');
-        $.ajax({
-            type: "post",
-            url: "<?php echo roothtml.'customer/customerinout_action.php' ?>",
-            data: {
-                action: 'editprepare',
-                aid: aid
-            },
-            success: function(data) {
-                $("#showedit").html(data);
-            }
-        });
-
-    });
-
-    $(document).on('click', '#btnedit', function(e) {
-        e.preventDefault();
-        var supplier = $("[name='esupplierpay1']").val();
-        var amt = $("[name='eamt']").val();
-        var date = $("[name='edate']").val();
-        var aid = $("[name='aid']").val();
-        if (supplier == '') {
-            swal('info', 'Please Fill Supplier', 'info');
-            return false;
-        }
-        if (amt == '' || amt <= 0) {
-            swal('info', 'Please Fill Amount', 'info');
-            return false;
-        }
-        $("#editmodal").modal("hide");
-        $.ajax({
-            type: "post",
-            url: "<?php echo roothtml.'customer/customerinout_action.php' ?>",
-            data: {
-                action: 'edit',
-                supplier: supplier,
-                amt: amt,
-                date: date,
-                aid: aid
-            },
-            success: function(data) {
-                if (data == 1) {
-                    swal('success', 'Edit Success', 'success');
-
-                    load_pag();
-                    swal.close();
-                } else {
-                    swal('error', 'error edit', 'error');
-                }
-            }
-        });
-
-    });
-
-    $(document).on("click", "#btndelete", function(e) {
+    $(document).on("click", "#btnconfirm", function(e) {
         e.preventDefault();
         var aid = $(this).data("aid");
-
         swal({
-                title: "Delete?",
-                text: "Are you sure delete!",
-                type: "error",
+                title: "Confirm?",
+                text: "Are you sure Confirm PreOrder!",
+                type: "success",
                 showCancelButton: true,
-                confirmButtonClass: "btn-danger",
-                confirmButtonText: "Yes, delete it!",
+                confirmButtonClass: "btn-success",
+                confirmButtonText: "Yes, Confirm it!",
                 closeOnConfirm: false
             },
             function() {
                 $.ajax({
                     type: "post",
-                    url: "<?php echo roothtml.'customer/customerinout_action.php'; ?>",
+                    url: ajax_url,
                     data: {
-                        action: 'delete',
+                        action: 'confirm',
                         aid: aid
                     },
                     success: function(data) {
                         if (data == 1) {
                             swal("Successful",
-                                "Delete data success.",
+                                "Confirm data success.",
                                 "success");
-                            load_pag();
+                            load_pageview();
                             swal.close();
-                        } else {
+                        } 
+                        else {
                             swal("Error",
-                                "Delete data failed.",
+                                "Confirm data failed.",
+                                "error");
+                        }
+                    }
+                });
+            });
+    });
+
+    $(document).on("click", "#btnreturn", function(e) {
+        e.preventDefault();
+        var aid = $(this).data("aid");
+        swal({
+                title: "Preorder Return?",
+                text: "Are you sure Return PreOrder!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonClass: "btn-warning",
+                confirmButtonText: "Yes, Return it!",
+                closeOnConfirm: false
+            },
+            function() {
+                $.ajax({
+                    type: "post",
+                    url: ajax_url,
+                    data: {
+                        action: 'return',
+                        aid: aid
+                    },
+                    success: function(data) {
+                        if (data == 1) {
+                            swal("Successful",
+                                "Return data success.",
+                                "success");
+                            load_pageview();
+                            swal.close();
+                        } 
+                        else {
+                            swal("Error",
+                                "Return data failed.",
+                                "error");
+                        }
+                    }
+                });
+            });
+    });
+
+    $(document).on("click", "#btncancel", function(e) {
+        e.preventDefault();
+        var aid = $(this).data("aid");
+        swal({
+                title: "Preorder Cancel?",
+                text: "Are you sure Cancel PreOrder!",
+                type: "error",
+                showCancelButton: true,
+                confirmButtonClass: "btn-danger",
+                confirmButtonText: "Yes, Cancel it!",
+                closeOnConfirm: false
+            },
+            function() {
+                $.ajax({
+                    type: "post",
+                    url: ajax_url,
+                    data: {
+                        action: 'cancel',
+                        aid: aid
+                    },
+                    success: function(data) {
+                        if (data == 1) {
+                            swal("Successful",
+                                "Cancel data success.",
+                                "success");
+                            load_pageview();
+                            swal.close();
+                        } 
+                        else {
+                            swal("Error",
+                                "Cancel data failed.",
                                 "error");
                         }
                     }
